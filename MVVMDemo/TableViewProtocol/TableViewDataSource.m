@@ -8,6 +8,8 @@
 
 #import "TableViewDataSource.h"
 #import "CustomTableViewCell.h"
+#import "CellViewModel.h"
+
 @implementation TableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
@@ -19,7 +21,7 @@
         cell = [[CustomTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
         
     }
-    cell.titleLabel.text=((CustomModel *)[_array objectAtIndex:indexPath.row]).title;
+    cell.titleLabel.text=((CellViewModel *)[_array objectAtIndex:indexPath.row]).textToDisplay;
     // Configure the cell...
     
     return cell;

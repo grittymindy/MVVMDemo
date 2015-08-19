@@ -8,9 +8,12 @@
 
 #import "TableViewModel.h"
 #import "CustomModel.h"
-@interface TableViewModel ()
+#import "CellViewModel.h"
 
+@interface TableViewModel ()
+@property (nonatomic, strong, readwrite) NSArray *items;
 @end
+
 @implementation TableViewModel
 
 - (instancetype)init
@@ -40,12 +43,14 @@
                     NSString *string=[NSString stringWithFormat:@"    (random%d) 君子性非异也，善假于物也！",x];
                     CustomModel *model=[[CustomModel alloc] init];
                     model.title=string;
-                    [arr addObject:model];
                     
+                    CellViewModel *viewModel = [[CellViewModel alloc] initWithCustomMode:model];
+                    [arr addObject:viewModel];
                 }
                 
+                self.items = arr;
                 
-                callback(arr);
+                callback();
             });
             
         });
@@ -70,12 +75,15 @@
                     NSString *string=[NSString stringWithFormat:@"    (random%d) 君子性非异也，善假于物也！",x];
                     CustomModel *model=[[CustomModel alloc] init];
                     model.title=string;
-                    [arr addObject:model];
+                    
+                    CellViewModel *viewModel = [[CellViewModel alloc] initWithCustomMode:model];
+                    [arr addObject:viewModel];
                     
                 }
                 
+                self.items = arr;
                 
-                callback(arr);
+                callback();
             });
             
         });

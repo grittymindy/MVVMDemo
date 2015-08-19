@@ -21,6 +21,7 @@
 		0A55390B1B40205200E8457B /* TableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5538FF1B40205200E8457B /* TableViewDelegate.m */; };
 		0A55390C1B40205200E8457B /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5539021B40205200E8457B /* CustomTableViewCell.m */; };
 		0A55390D1B40205200E8457B /* TableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5539051B40205200E8457B /* TableViewModel.m */; };
+		E1D70F5C1B8427ED008B7B9A /* CellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D70F5B1B8427ED008B7B9A /* CellViewModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,8 @@
 		0A5539021B40205200E8457B /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 		0A5539041B40205200E8457B /* TableViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewModel.h; sourceTree = "<group>"; };
 		0A5539051B40205200E8457B /* TableViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewModel.m; sourceTree = "<group>"; };
+		E1D70F5A1B8427ED008B7B9A /* CellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellViewModel.h; sourceTree = "<group>"; };
+		E1D70F5B1B8427ED008B7B9A /* CellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellViewModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +209,8 @@
 		0A5539031B40205200E8457B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				E1D70F5A1B8427ED008B7B9A /* CellViewModel.h */,
+				E1D70F5B1B8427ED008B7B9A /* CellViewModel.m */,
 				0A5539041B40205200E8457B /* TableViewModel.h */,
 				0A5539051B40205200E8457B /* TableViewModel.m */,
 			);
@@ -312,6 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1D70F5C1B8427ED008B7B9A /* CellViewModel.m in Sources */,
 				0A5538651B40096700E8457B /* AppDelegate.m in Sources */,
 				0A55390A1B40205200E8457B /* TableViewDataSource.m in Sources */,
 				0A5538621B40096700E8457B /* main.m in Sources */,

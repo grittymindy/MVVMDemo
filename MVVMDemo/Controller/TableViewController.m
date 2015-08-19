@@ -16,9 +16,9 @@
 
     YiRefreshHeader *refreshHeader;
     YiRefreshFooter *refreshFooter;
-    NSMutableArray *totalSource;
-    TableViewModel *tableViewModel;
     UITableView *tableView;
+    
+    TableViewModel *tableViewModel;
     TableViewDataSource *tableViewDataSource;
     TableViewDelegate *tableViewDelegate;
 }
@@ -45,7 +45,6 @@
     tableView.dataSource=tableViewDataSource;
     tableView.delegate=tableViewDelegate;
     tableViewModel=[[TableViewModel alloc] init];
-    totalSource=0;
     
     
 //    YiRefreshHeader  头部刷新按钮的使用
@@ -65,9 +64,7 @@
     [refreshHeader beginRefreshing];
     
     
-    
-    
-    
+
     
     
     
@@ -88,27 +85,24 @@
 - (void)headerRefreshAction
 {
    
-    [tableViewModel headerRefreshRequestWithCallback:^(NSArray *array){
+    [tableViewModel headerRefreshRequestWithCallback:^(){
         
-        totalSource=array;
-        tableViewDataSource.array=totalSource;
-        tableViewDelegate.array=totalSource;
+        tableViewDataSource.array= tableViewModel.items;
+        tableViewDelegate.array=tableViewModel.items;
         
         [refreshHeader endRefreshing];
         [tableView reloadData];
     }];
-    
-    
 
 }
 
 - (void)footerRefreshAction
 {
     
-    [tableViewModel footerRefreshRequestWithCallback:^(NSArray *array){
-        [totalSource addObjectsFromArray:array] ;
-        tableViewDataSource.array=totalSource;
-        tableViewDelegate.array=totalSource;
+    [tableViewModel footerRefreshRequestWithCallback:^(){
+
+        tableViewDataSource.array=tableViewModel.items;
+        tableViewDelegate.array=tableViewModel.items;
 
         [refreshFooter endRefreshing];
         [tableView reloadData];

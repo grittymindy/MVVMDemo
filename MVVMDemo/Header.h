@@ -11,5 +11,4 @@
 #define HScreen [[UIScreen mainScreen] bounds].size.height
 #define WScreen [[UIScreen mainScreen] bounds].size.width
 #define iOS7 [[[UIDevice currentDevice]systemVersion] floatValue] >= 7.0
-#import "CustomModel.h"
 #endif

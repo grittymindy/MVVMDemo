@@ -7,12 +7,13 @@
 //
 
 #import "TableViewDelegate.h"
+#import "CellViewModel.h"
 
 @implementation TableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (_array.count>0) {
-        UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"" message:((CustomModel *)[_array objectAtIndex:indexPath.row]).title delegate:nil cancelButtonTitle:@"sure" otherButtonTitles:nil, nil];
+        UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"" message:((CellViewModel *)[_array objectAtIndex:indexPath.row]).textToDisplay delegate:nil cancelButtonTitle:@"sure" otherButtonTitles:nil, nil];
         [alert show];
     }
     
